@@ -1,0 +1,66 @@
+[user]
+  name = Flavien Cogez
+  email = flavien.cogez@gmail.com
+
+[core]
+  excludesfile = /Users/kao/.gitignore_global
+  editor = vi
+
+[color]
+  ui = true
+
+[push]
+  default = matching
+
+[alias]
+  st = status -sb
+  df = diff --color
+  # last tag
+  lt = describe --abbrev=0
+
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  rbc = rebase --continue
+  ph = push
+  pl = pull
+
+  stash-all = stash save --include-untracked
+
+  br = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(HEAD) (%(color:green)%(committerdate:relative)%(color:reset)) %(color:yellow)%(refname:short)%(color:reset) [%(color:red)%(objectname:short)%(color:reset)] - %(contents:subject) by %(authorname)'
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+  # delete last commit
+  undo = reset --soft HEAD~1
+  pf = push --force-with-lease
+
+[status]
+  showUntrackedFiles = all
+
+[pull]
+  rebase = true
+
+[heroku]
+  account = personal
+
+[rerere]
+  enabled = true
+
+[gc]
+ auto = 0
+
+[rebase]
+  autosquash = true
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[github]
+  user = kao
+  oauth-token = XXX
+[magithub]
+  online = false
+[magithub "status"]
+  includeStatusHeader = false
+  includePullRequestsSection = false
+  includeIssuesSection = false
